@@ -1,0 +1,17 @@
+name: update stock on hand
+
+on:
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Use the secret
+        env:
+          STOCKIIE_PASSWORD: ${{ secrets.STOCKIIE_PASSWORD }},
+          EMAIL_RECEIVERS: ${{variables.EMAIL_RECEIVER}},
+          EMAIL_SENDER: ${{variable.EMAIL_SENDER}},
+          STOCKIIE_URL: ${{variable.STOCKIIE_URL}},
+          
+        run: |
+          echo $API_KEY
+          # Use the API_KEY in your code
